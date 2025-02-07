@@ -48,12 +48,29 @@
 <span id="prompt" style="margin-top:1in;">Touch the rose</span>
 
 <div style="display: none;">
-  <audio autoplay loop controls>
-    <source src="/Rose_Day/river_flows_in_you.mp3" type="audio/mp3">
-  </audio>
+    <div>
+        <audio id="background-music" loop>
+          <source src="./river_flows_in_you.mp3" type="audio/mp3">
+        </audio>
+      </div>
+      
 </div>
 
 <h1 style="display: flexbox; text-align: center; padding-top: 1cm;">By Your one and only SAK 😌✨</h1>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.querySelector("audio");
+      
+      // Ensure audio plays when user interacts
+      document.body.addEventListener("click", function () {
+        if (audio.paused) {
+          audio.muted = false;
+          audio.play();
+        }
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
